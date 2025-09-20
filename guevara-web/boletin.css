@@ -54,4 +54,5 @@ th, td {
     text-orientation: mixed;
     transform: rotate(180deg);
     justify-content: center;
+    width: 60px;
 }
