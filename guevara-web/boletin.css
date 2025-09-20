@@ -1,0 +1,57 @@
+#exportarbtns{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+#exportarbtns button{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #c21c34;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#exportarbtns button:hover {
+    background-color: #eb0e2b;
+    box-shadow: 0px 0px 10px #eb0e2b;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#boletin{
+    background-color: #696969;
+    margin: 40px;
+    margin-top: 20px;
+}
+
+#logoGuev{
+    height: 80px;
+    margin: 0px 20px 0px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: white;
+    border: 3px solid black;
+}
+
+th, td {
+    border: 3px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+#materias{
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    justify-content: center;
+}
