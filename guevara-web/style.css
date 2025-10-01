@@ -20,6 +20,7 @@ body{
 
 #navbar ul li {
     margin: 0 15px;
+    align-content: center;
 }
 
 #navbar ul li a {
@@ -65,3 +66,7 @@ footer ul{
     margin: 10px 0 0 0;
 }
 
+#usuariologo {
+    height: 70px;
+    border-radius: 50%;
+}
