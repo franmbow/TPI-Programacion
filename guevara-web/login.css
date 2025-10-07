@@ -2,7 +2,7 @@ form{
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 450px;
+    height: auto;
     margin: auto;
     padding: 20px;
     margin-top: 50px;
