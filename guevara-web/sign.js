@@ -1,13 +1,13 @@
-document.getElementById('logform').addEventListener('submit', async (e) => {
+document.getElementById('signForm').addEventListener('submit', async (e) => {
     e.preventDefault();
-    const usuario = document.getElementById('usuario').value.trim();
+    const userNombre = document.getElementById('usuario').value.trim();
     const contraseña = document.getElementById('contraseña').value.trim();
     const correo = document.getElementById('correo').value.trim();
     try {
-        const respuesta = await fetch('http://localhost:3000/guevara', {
+        const respuesta = await fetch('http://localhost:3000/user', {
             method: 'POST',
             headers: { "Content-Type" : 'application/json' },
-            body: JSON.stringify({ usuario, contraseña, correo})
+            body: JSON.stringify({ userNombre, contraseña, correo})
         });
         if (!respuesta.ok) {throw new Error("Error al conectar con el servidor");}
         const resultado = await respuesta.json();
@@ -15,6 +15,4 @@ document.getElementById('logform').addEventListener('submit', async (e) => {
     } catch (error) {
         console.error("Error:", error);
     };
-    const resultado = await resultado.txt();
-    alert(resultado);
 });
