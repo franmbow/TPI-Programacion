@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
-import bodyParser from 'body-parser';
 import { db } from '../sv.js';
 
 export const signRouter = Router();
