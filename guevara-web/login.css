@@ -59,3 +59,9 @@ form p a:hover {
     color: #eb0e2b;
     text-shadow: #eb0e2b 1px 0px 10px;
 }
+
+#errmsg {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
