@@ -10,7 +10,7 @@ document.getElementById('signForm').addEventListener('submit', async (e) => {
         return;
     }
     try {
-        const respuesta = await fetch('http://localhost:3000/user', {
+        const respuesta = await fetch('http://localhost:3000/sign', {
             method: 'POST',
             headers: { "Content-Type" : 'application/json' },
             body: JSON.stringify({ userNombre, contraseña, correo})

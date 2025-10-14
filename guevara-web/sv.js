@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mysql from 'mysql';
 import { signRouter } from './routes/signRouter.js';
+import { logRouter } from './routes/logRouter.js';
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,7 @@ db.getConnection((error) => {
 }});
 
 app.use('/', signRouter);
+app.use('/', logRouter);
 
 app.listen(3000, () => {
     console.log('Servidor escuchando en el puerto 3000');
