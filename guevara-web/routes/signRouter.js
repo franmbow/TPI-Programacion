@@ -4,7 +4,7 @@ import { db } from '../sv.js';
 
 export const signRouter = Router();
 
-signRouter.post('/user', async (req, res) => {
+signRouter.post('/sign', async (req, res) => {
     const { userNombre, contraseña, correo } = req.body;
     const hash = await bcrypt.hash(contraseña, 10);
     const query = 'INSERT INTO user (userNombre, contraseña, correo) VALUES (?, ?, ?)';
@@ -17,3 +17,5 @@ signRouter.post('/user', async (req, res) => {
         }
     });
 });
+
+export default signRouter;
