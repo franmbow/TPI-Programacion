@@ -70,3 +70,19 @@ footer ul{
     height: 70px;
     border-radius: 50%;
 }
+
+#saludo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+#saludo h1 {
+    padding: 0px 40px;
+}
