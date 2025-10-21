@@ -15,9 +15,9 @@ document.getElementById('logForm').addEventListener('submit', async (e) => {
         }
         const resultado = await respuesta.json();
         console.log("user", resultado);
-        error.msg.textContent = "";
-        if (respuesta.status === 200) {
+        if (respuesta.status === 201) {
             localStorage.setItem('token', resultado.token);
+            localStorage.setItem('userNombre', resultado.userNombre);
             window.location.href = 'index.html';
         }
     } catch (error) {

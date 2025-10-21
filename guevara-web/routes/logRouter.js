@@ -16,12 +16,18 @@ logRouter.post('/log', (req, res) => {
             return res.status(401).json({ mensaje: 'Usuario o contraseña incorrectos' });
         }
         const user = results[0];
-        const match = await bcrypt.compare(contraseña, user['contraseña']);
+        const match = await bcrypt.compare(contraseña, user.contraseña);
         if (!match) {
-            return res.status(401).json({ mensaje: 'contraseña' });
+            return res.status(401).json({ mensaje: 'Usuario o contraseña incorrectos' });
         }
         const token = jwt.sign({ userID: user.userID }, 'secreto', { expiresIn: '1h' });
-        return res.status(200).json({ mensaje: 'Inicio de sesión exitoso', token });
+        return res.status(201).json(
+            { 
+                mensaje: 'Inicio de sesión exitoso', 
+                token,
+                userNombre: user.userNombre
+            }
+        );
     })
 })
 
