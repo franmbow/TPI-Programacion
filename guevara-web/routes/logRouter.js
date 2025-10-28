@@ -20,15 +20,26 @@ logRouter.post('/log', (req, res) => {
         if (!match) {
             return res.status(401).json({ mensaje: 'Usuario o contraseña incorrectos' });
         }
-        const token = jwt.sign({ userID: user.userID }, 'secreto', { expiresIn: '1h' });
+
+        req.session.user = { userID: user.userID, userNombre: user.userNombre, rol: user.rol };
+
         return res.status(201).json(
             { 
-                mensaje: 'Inicio de sesión exitoso', 
-                token,
-                userNombre: user.userNombre
+                mensaje: 'Inicio de sesión exitoso',
+                userID: user.userID,
+                userNombre: user.userNombre,
+                rol: user.rol
             }
         );
     })
 })
+
+logRouter.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) return res.status(500).json({ mensaje: 'Error al cerrar sesión' });
+        res.clearCookie('connect.sid');
+        res.json({ mensaje: 'Sesión cerrada correctamente' });
+});
+});
 
 export default logRouter;
