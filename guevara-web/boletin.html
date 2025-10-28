@@ -6,30 +6,63 @@
     <title>Guevara</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="boletin.css">
-    <script src="script.js" defer></script>
-    <script src="backend.js"></script>
+    <script src="notas.js" defer></script>
+    <script src="user.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
         <img id="logo" src="/src/logo.png" alt="Logo de Guevara">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="panel.html">Notas</a></li>
-            <li><a href="login.html">Iniciar sesion</a></li>
+            <li id="panel" class="oculto"><a href="panel.html">Notas</a></li>
+            </div>
+            <li id="boletin" class=""><a id="boletinA">Boletín</a></li>
+            <li id="iniciar" class=""><a href="login.html">Iniciar sesión</a></li>
+            <li id="cerrar" class="oculto"><button>Cerrar sesión</button></li>
         </ul>
     </nav>
     <div id="exportarbtns">
+        <button id="añadir" class="oculto">Añadir nota</button>
+        <div id="divNotas" class="oculto">
+            <form id="formNota">
+                <label for="materiaSelect">Materia:</label>
+                    <select id="materiaSelect" name="materiaSelect" required>
+                        <option value="1">Matemática</option>
+                        <option value="2">Inglés técnico</option>
+                        <option value="3">Marco jurídico</option>
+                        <option value="4">TÉCNICA: Asistencia 2</option>
+                        <option value="5">TÉCNICA: Autogestión</option>
+                        <option value="6">TÉCNICA: Hardware 4</option>
+                        <option value="7">TÉCNICA: Prácticas profesionalizantes</option>
+                        <option value="8">TÉCNICA: Programación IV</option>
+                        <option value="9">TÉCNICA: Redes 3</option>
+                    </select>
+                <label for="cuatrimestreSelect">Cuatrimestre:</label>
+                    <select name="cuatrimestreSelect" id="cuatrimestreSelect">
+                        <option value="1">1er</option>
+                        <option value="2">2do</option>
+                    </select>
+                <label for="informeSelect">Informe:</label>
+                    <select name="informeSelect" id="informeSelect">
+                        <option value="1">1er</option>
+                        <option value="2">2do</option>
+                        <option value="3">Nota</option>
+                    </select>
+                <label for="notaValor">Nota:</label>
+                    <input type="number" id="notaValor" name="notaValor" min="1" max="10" required="required">
+                <button type="submit">Guardar nota</button>
+            </form>
+        </div>
         <button id="compartir">Compartir</button>
         <button id="exportar">Exportar</button>
     </div>
-    <div id="boletin">
-        <table>
+    
+    <div id="boletinTabla">
+        <table id="tabla-notas">
             <thead>
                 <tr>
                     <th colspan="18">Colegio Provincial Dr. Ernesto Guevara</th>
                 </tr>
-            </thead>
-            <tbody>
                 <tr>
                     <th colspan="9">Alumno:</th>
                     <th colspan="7">Curso:</th>
@@ -37,52 +70,194 @@
                 </tr>
                 <tr>
                     <th colspan="4"><img src="/src/logoGuev.png" id="logoGuev"></th>
-                    <th id="materias">materia 1</th>
-                    <th id="materias">materia 2</th>
-                    <th id="materias">materia 3</th>
-                    <th id="materias">materia 4</th>
-                    <th id="materias">materia 5</th>
-                    <th id="materias">materia 6</th>
-                    <th id="materias">materia 7</th>
-                    <th id="materias">materia 8</th>
-                    <th id="materias">materia 9</th>
-                    <th id="materias">materia 10</th>
-                    <th id="materias">materia 11</th>
-                    <th id="materias">materia 12</th>
-                    <th id="materias">materia 13</th>
-                    <th id="materias">materia 14</th>
+                    <th id="materias" class="materia1"></th>
+                    <th id="materias" class="materia2"></th>
+                    <th id="materias" class="materia3"></th>
+                    <th id="materias" class="materia4"></th>
+                    <th id="materias" class="materia5"></th>
+                    <th id="materias" class="materia6"></th>
+                    <th id="materias" class="materia7"></th>
+                    <th id="materias" class="materia8"></th>
+                    <th id="materias" class="materia9"></th>
+                    <th id="materias" class="materia10"></th>
+                    <th id="materias" class="materia11"></th>
+                    <th id="materias" class="materia12"></th>
+                    <th id="materias" class="materia13"></th>
+                    <th id="materias" class="materia14"></th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <th rowspan="3">1er Cuatrimestre</th>
-                    <th>1er informe</th>
+                    <th colspan="3">1er informe</th>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="1"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="2"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="3"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="4"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="5"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="6"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="7"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="8"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="9"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="10"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="11"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="12"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="13"></td>
+                    <td data-cuatrimestre="1" data-informe="1" data-materia="14"></td>
                 </tr>
                 <tr>
-                    <th>2do informe</th>
+                    <th colspan="3">2do informe</th>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="1"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="2"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="3"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="4"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="5"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="6"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="7"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="8"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="9"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="10"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="11"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="12"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="13"></td>
+                    <td data-cuatrimestre="1" data-informe="2" data-materia="14"></td>
                 </tr>
                 <tr>
-                    <th>Nota</th>
+                    <th colspan="3">Nota</th>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="1"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="2"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="3"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="4"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="5"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="6"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="7"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="8"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="9"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="10"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="11"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="12"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="13"></td>
+                    <td data-cuatrimestre="1" data-informe="3" data-materia="14"></td>
                 </tr>
                 <tr>
                     <th rowspan="3">2do Cuatrimestre</th>
-                    <th>1er informe</th>
+                    <th colspan="3">1er informe</th>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="1"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="2"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="3"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="4"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="5"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="6"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="7"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="8"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="9"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="10"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="11"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="12"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="13"></td>
+                    <td data-cuatrimestre="2" data-informe="1" data-materia="14"></td>
                 </tr>
                 <tr>
-                    <th>2do informe</th>
+                    <th colspan="3">2do informe</th>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="1"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="2"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="3"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="4"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="5"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="6"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="7"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="8"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="9"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="10"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="11"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="12"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="13"></td>
+                    <td data-cuatrimestre="2" data-informe="2" data-materia="14"></td>
                 </tr>
                 <tr>
-                    <th>Nota</th>
+                    <th colspan="3">Nota</th>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="1"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="2"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="3"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="4"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="5"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="6"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="7"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="8"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="9"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="10"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="11"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="12"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="13"></td>
+                    <td data-cuatrimestre="2" data-informe="3" data-materia="14"></td>
                 </tr>
                 <tr>
-                    <th colspan="4">Calificacion anual</th>
+                    <th colspan="4">Calificación anual</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th colspan="4">Calificacion diciembre</th>
+                    <th colspan="4">Calificación diciembre</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th colspan="4">Calificacion febrero/marzo</th>
+                    <th colspan="4">Calificación febrero/marzo</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th colspan="4">Calificacion definitiva</th>
+                    <th colspan="4">Calificación definitiva</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>

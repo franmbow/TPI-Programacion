@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-#boletin{
+#boletinTabla{
     background-color: #696969;
     margin: 40px;
     margin-top: 20px;
@@ -43,16 +43,76 @@ table {
     border: 3px solid black;
 }
 
-th, td {
+th {
     border: 3px solid black;
     padding: 8px;
     text-align: left;
 }
 
+td {
+    border: 3px solid black;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 #materias{
-    writing-mode: vertical-lr;
+    writing-mode: vertical-rl;
     text-orientation: mixed;
     transform: rotate(180deg);
     justify-content: center;
     width: 60px;
+    height: 60px;
+}
+
+#divNotas{
+    position: fixed;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    margin-right: 160px;
+    padding: 20px;
+    margin-top: 90px;
+    background-color: #696969;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #1d1d1d;
+    z-index: 1000;
+    scale: 1;
+    transition: all 0.5s cubic-bezier(.79,.14,.15,.86);;
+
+    @starting-style {
+        scale: 0;
+    }
+}
+
+
+#formNota {
+    display: flex;
+    flex-direction: column;
+    color: #fefefe;
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+
+}
+
+#formNota input, #formNota select {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fefefe;
+    opacity: 80%;
+    box-shadow: 0px 0px 5px #1d1d1d;
+}
+
+#formNota button{
+    width: 100%;
+}
+
+.oculto{
+    display: none;
 }
