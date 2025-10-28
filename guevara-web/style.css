@@ -30,9 +30,27 @@ body{
     background-color: #c21c34;
     padding: 10px 20px;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 #navbar ul li a:hover {
+    background-color: #eb0e2b;
+    box-shadow: 0px 0px 10px #eb0e2b;
+    transition: all 0.3s;
+}
+
+#navbar ul li button {
+    background-color: #c21c34;
+    font-size: 14px;
+    color: white;
+    border: 0px;
+    border-radius: 100px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#navbar ul li button:hover{
     background-color: #eb0e2b;
     box-shadow: 0px 0px 10px #eb0e2b;
     transition: all 0.3s;
@@ -81,8 +99,14 @@ footer ul{
     text-align: center;
     padding: 20px;
     font-weight: bold;
+    text-shadow: 2px 2px 4px #000000;
+    
 }
 
 #saludo h1 {
     padding: 0px 40px;
+}
+
+.oculto{
+    display: none;
 }
