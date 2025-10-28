@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesion</title>
+    <title>Iniciar sesión</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
     <script src="log.js" defer></script>
+    <script src="user.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
         <img id="logo" src="/src/logo.png" alt="Logo de Guevara">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="panel.html">Notas</a></li>
-            <li><a href="login.html">Iniciar sesion</a></li>
+            <li id="panel" class="oculto"><a href="panel.html">Notas</a></li>
+            <li id="boletin" class=""><a id="boletinA">Boletín</a></li>
+            <li id="iniciar" class=""><a href="login.html">Iniciar sesión</a></li>
+            <li id="cerrar" class="oculto"><button>Cerrar sesión</button></li>
         </ul>
     </nav>
     <form id="logForm">
@@ -23,7 +26,7 @@
         <input type="password" id="contraseña" placeholder="Contraseña" required>
         <button type="submit">Iniciar Sesión</button>
         <p>
-            si no tienes una cuenta haz click <a href="signup.html">aqui</a> para registrarte.
+            si no tienes una cuenta haz click <a href="signup.html">aquí</a> para registrarte.
         </p>
     </form>   
 </body>

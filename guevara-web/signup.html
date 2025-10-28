@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
     <script src="sign.js" defer></script>
+    <script src="user.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
         <img id="logo" src="/src/logo.png" alt="Logo de Guevara">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="panel.html">Notas</a></li>
-            <li><a href="login.html">Iniciar sesion</a></li>
+            <li id="panel" class="oculto"><a href="panel.html">Notas</a></li>
+            <li id="boletin" class=""><a id="boletinA">Boletín</a></li>
+            <li id="iniciar" class=""><a href="login.html">Iniciar sesión</a></li>
+            <li id="cerrar" class="oculto"><button>Cerrar sesión</button></li>
         </ul>
     </nav>
     <form id="signForm">
@@ -26,7 +29,7 @@
         <button type="submit">Crear cuenta</button>
         <p id="errmsg"></p>
         <p>
-            si ya tienes una cuenta haz click <a href="login.html">aqui</a> para iniciar sesion
+            si ya tienes una cuenta haz click <a href="login.html">aquí</a> para iniciar sesión
         </p>
     </form>   
 </body>
