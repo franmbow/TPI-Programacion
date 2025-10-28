@@ -6,7 +6,7 @@ document.getElementById('logForm').addEventListener('submit', async (e) => {
     try {
         const respuesta = await fetch('http://localhost:3000/log', {
             method: 'POST',
-            headers: { "Content-Type" : 'application/json' },
+            headers: { "Content-Type" : 'application/json'},
             body: JSON.stringify({ userNombre, contraseña})
         })
         if (!respuesta.ok) {
@@ -17,7 +17,9 @@ document.getElementById('logForm').addEventListener('submit', async (e) => {
         console.log("user", resultado);
         if (respuesta.status === 201) {
             localStorage.setItem('token', resultado.token);
+            localStorage.setItem('userID', resultado.userID);
             localStorage.setItem('userNombre', resultado.userNombre);
+            localStorage.setItem('rol', resultado.rol);
             window.location.href = 'index.html';
         }
     } catch (error) {
