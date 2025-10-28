@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guevara</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
     <script src="user.js" defer></script>
 </head>
 <body>
@@ -13,8 +12,10 @@
         <img id="logo" src="/src/logo.png" alt="Logo de Guevara">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="panel.html">Notas</a></li>
-            <li><a href="login.html">Iniciar sesion</a></li>
+            <li id="panel" class="oculto"><a href="panel.html">Notas</a></li>
+            <li id="boletin" class=""><a id="boletinA">Boletín</a></li>
+            <li id="iniciar" class=""><a href="login.html">Iniciar sesión</a></li>
+            <li id="cerrar" class="oculto"><button>Cerrar sesión</button></li>
         </ul>
     </nav>
     <img id="banner" src="/src/banner.jpg" alt="Banner de Guevara">
