@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="panel.css">
     <script src="panel.js" defer></script>
+    <script src="user.js" defer></script>
 </head>
 <body>
     <nav id="navbar">
         <img id="logo" src="/src/logo.png" alt="Logo de Guevara">
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="panel.html">Notas</a></li>
-            <li><a href="login.html">Iniciar sesion</a></li>
+            <li id="panel" class="oculto"><a href="panel.html">Notas</a></li>
+            <li id="boletin" class=""><a id="boletinA">Boletín</a></li>
+            <li id="iniciar" class=""><a href="login.html">Iniciar sesión</a></li>
+            <li id="cerrar" class="oculto"><button>Cerrar sesión</button></li>
         </ul>
     </nav>
     <section id="panel">
@@ -34,7 +37,29 @@
                             <p id="mail"></p>
                         </div>
                     </div>
-                    <a id="verBoletin" href="boletin.html">Ver boletin</a>
+                    <div>
+                        <button id="modi" type="button">Modificar</button>
+                        <div id="mod" class="hidden">
+                            <label>
+                                Rol:
+                                <select name="rol">
+                                    <option value="1">Estudiante</option>
+                                    <option value="2">Profesor</option>
+                                    <option value="3">Administrador</option>
+                                </select>
+                            </label>
+
+                            <label>Curso:
+                                <select name="curso">
+                                    <option value="1">7°1</option>
+                                    <option value="2">7°2</option>
+                                    <option value="3">7°3</option>
+                                </select>
+                            </label>
+                        <button id="guardar" type="button">Guardar</button>
+                        </div>
+                        <a id="verBoletin" href="boletin.html">Ver boletín</a>
+                    </div>
                 </li>
             </ul>
         </form>
