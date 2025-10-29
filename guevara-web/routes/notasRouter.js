@@ -45,5 +45,17 @@ notasRouter.post('/nota', async (req, res) => {
     });
 });
 
+notasRouter.get('/userData/:userID', (req, res) => {
+    const { userID } = req.params;
+    const soli = 'SELECT userID, userNombre, rol, cursoIDFK FROM user WHERE userID = ?';
+    db.query(soli, [userID], (err, resultado) => {
+    if (err) {
+        console.error(err);
+        return res.status(500).send('Error al pedir user');
+    } else {
+        res.status(200).json(resultado);
+    };
+    });
+});
 
 export default notasRouter; 
