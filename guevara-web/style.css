@@ -31,12 +31,12 @@ body{
     padding: 10px 20px;
     border-radius: 100px;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 #navbar ul li a:hover {
     background-color: #eb0e2b;
     box-shadow: 0px 0px 10px #eb0e2b;
-    transition: all 0.3s;
 }
 
 #navbar ul li button {
@@ -48,12 +48,12 @@ body{
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 #navbar ul li button:hover{
     background-color: #eb0e2b;
     box-shadow: 0px 0px 10px #eb0e2b;
-    transition: all 0.3s;
 }
 
 #logo {
@@ -100,7 +100,6 @@ footer ul{
     padding: 20px;
     font-weight: bold;
     text-shadow: 2px 2px 4px #000000;
-    
 }
 
 #saludo h1 {
