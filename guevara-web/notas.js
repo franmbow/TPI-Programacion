@@ -93,8 +93,25 @@ document.getElementById('añadir').addEventListener('click', (e) => {
     divNota.classList.toggle('oculto');
 });
 
+async function userData(userID) {
+    try {
+        const resp = await fetch(`http://localhost:3000/userData/${userID}`)
+        const thAlumno = document.getElementById('thAlumno');
+        
+        const thCurso = document.getElementById('thCurso');
+        if (!resp.ok) throw new Error('Error al conectar con el servidor');
+        const user = await resp.json();
+        const u = Array.isArray(user) ? user[0] : user;
+        thAlumno.textContent = `Alumno: ${u?.userNombre}`;
+        thCurso.textContent = `Curso: 7°${u?.cursoIDFK !== null ? u?.cursoIDFK : 'Sin asignar'}`;
+    } catch (error) {
+        console.error('Error al obtener el usuario', error);
+    }
+};
+
 
 const userID = getQueryParam('userId');
-const rol = localStorage.getItem('rol')
+const rol = localStorage.getItem('rol');
+userData(userID);
 btnNotas(rol);
 cargarNotas(userID);

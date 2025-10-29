@@ -15,6 +15,7 @@
     border: 0px;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 #exportarbtns button:hover {
@@ -79,7 +80,7 @@ td {
     box-shadow: 0px 0px 10px #1d1d1d;
     z-index: 1000;
     scale: 1;
-    transition: all 0.5s cubic-bezier(.79,.14,.15,.86);;
+    transition: all .5s cubic-bezier(.79,.14,.15,.86);
 
     @starting-style {
         scale: 0;
