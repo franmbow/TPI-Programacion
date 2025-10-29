@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             const modiBtn = li.querySelector('#modi');
             if (modiBtn && form) {
                 modiBtn.addEventListener('click', (e) => {
-                    form.classList.toggle('hidden');
-                    link.classList.toggle('hidden');
+                    form.classList.toggle('oculto');
+                    link.classList.toggle('oculto');
                 });
             }
 
