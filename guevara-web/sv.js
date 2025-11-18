@@ -33,11 +33,12 @@ db.getConnection((error) => {
         console.log('Conectado a la base de datos');
 }});
 
+app.use('/', userRouter);
 app.use('/', signRouter);
 app.use('/', logRouter);
 app.use('/', notasRouter);
 app.use('/', panelRouter);
-app.use('/', userRouter);
+
 
 
 app.listen(3000, () => {

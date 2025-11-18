@@ -59,9 +59,8 @@ td {
 }
 
 #materias{
-    writing-mode: vertical-rl;
+    writing-mode: sideways-lr;
     text-orientation: mixed;
-    transform: rotate(180deg);
     justify-content: center;
     width: 60px;
     height: 60px;
@@ -95,8 +94,11 @@ td {
     font-weight: bold;
     font-size: 18px;
     width: 100%;
-
 }
+
+#tabla-notas{
+    background-color: #696969;
+}   
 
 #formNota input, #formNota select {
     margin-bottom: 10px;

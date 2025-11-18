@@ -70,6 +70,7 @@ footer {
     background-color: #1d1d1d;
     color: white;
     text-align: center;
+    justify-content: space-between;
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -79,9 +80,8 @@ footer {
 footer ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 10px 0 0 0;
+    padding: 10px;
+    margin: 20px;
 }
 
 #usuariologo {
@@ -103,9 +103,80 @@ footer ul{
 }
 
 #saludo h1 {
-    padding: 0px 40px;
+    padding: 0px 20px;
 }
+
 
 .oculto{
     display: none;
+}
+
+
+#carruselDiv { 
+    display: flex;
+    position: relative; 
+    overflow: hidden;
+    margin: auto;
+    object-fit: contain;
+    margin: 0px 0px 0px 30px;
+    top: -90px;
+    width: 100%;
+}
+
+.slide { 
+    display: none; 
+    text-align: center; 
+}
+
+.slide.active { 
+    display: block; 
+    animation: fade 1s ease-in-out;
+    max-width: 80%
+}
+
+#carruselDiv .ant, #carruselDiv .sig {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+}
+
+.ant { 
+    left: 10px;
+}
+.sig { 
+    right: 190px; 
+}
+
+#info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+#infotxt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#descripcion {
+    text-align: center;
+    width: 600px;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+}
+
+#descripcionfinal {
+    width: 600px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
 }

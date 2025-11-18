@@ -15,7 +15,7 @@ async function cargarMaterias() {
         console.error('cargarMaterias error:', err);
     }
 }
-cargarMaterias();
+
 
 async function cargarNotas(userID) {
     try {
@@ -97,7 +97,7 @@ async function userData(userID) {
     try {
         const resp = await fetch(`http://localhost:3000/userData/${userID}`)
         const thAlumno = document.getElementById('thAlumno');
-        
+
         const thCurso = document.getElementById('thCurso');
         if (!resp.ok) throw new Error('Error al conectar con el servidor');
         const user = await resp.json();
@@ -110,8 +110,12 @@ async function userData(userID) {
 };
 
 
-const userID = getQueryParam('userId');
-const rol = localStorage.getItem('rol');
-userData(userID);
-btnNotas(rol);
-cargarNotas(userID);
+document.addEventListener('DOMContentLoaded', (e) => {
+    cargarMaterias();
+    const userID = getQueryParam('userId');
+    const rol = localStorage.getItem('rol');
+    userData(userID);
+    btnNotas(rol);
+    cargarNotas(userID);
+    cargarNotas(userID);
+});
